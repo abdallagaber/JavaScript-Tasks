@@ -12,7 +12,7 @@ const sum = () => {
     let input = prompt("Enter a number (0 to stop):");
 
     if (isNaN(input) || input.trim() === "") {
-      console.log("Invalid input! Please enter a numeric value.");
+      alert("Invalid input! Please enter a numeric value.");
       continue;
     }
 
@@ -25,7 +25,7 @@ const sum = () => {
     sum += number;
   }
 
-  console.log("Total sum =", sum);
+  alert("Total sum = " + sum);
 };
 
 const welcome = () => {
