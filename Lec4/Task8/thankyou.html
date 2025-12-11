@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      const fullName = getCookie("fullName");
+      const email = getCookie("email");
+      const city = getCookie("city");
+
+      document.body.innerHTML = `
+        <b>Name:</b> ${fullName}<br>
+        <b>Email:</b> ${email}<br>
+        <b>City:</b> ${city}<br>
+    `;
+    </script>
+  </body>
+</html>
